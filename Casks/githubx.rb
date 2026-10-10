@@ -28,7 +28,7 @@ cask "githubx" do
   # 的「首次启动」说明手动放行。
   postflight do
     system_command "/usr/bin/xattr",
-                   args: ["-rd", "com.apple.quarantine", "\#{appdir}/GitHub Desktop X.app"],
+                   args: ["-rd", "com.apple.quarantine", "#{appdir}/GitHub Desktop X.app"],
                    sudo: true
   end
 
