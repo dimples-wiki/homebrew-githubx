@@ -26,7 +26,7 @@ cask "githubx" do
   # 安装尾声会请求一次管理员密码。
   postflight_steps do
     system_command "/usr/bin/xattr",
-                   args: ["-rd", "com.apple.quarantine", "#{appdir}/GitHub Desktop X.app"],
+                   args: ["-rd", "com.apple.quarantine", "{{appdir}}/GitHub Desktop X.app"],
                    sudo: true
   end
 
