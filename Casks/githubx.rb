@@ -24,7 +24,7 @@ cask "githubx" do
 
   # 应用未公证：移除 brew 传播的 quarantine 标记，避免 Gatekeeper 拦截首次启动。
   # 安装尾声会请求一次管理员密码。
-  postflight do
+  postflight_steps do
     system_command "/usr/bin/xattr",
                    args: ["-rd", "com.apple.quarantine", "#{appdir}/GitHub Desktop X.app"],
                    sudo: true
